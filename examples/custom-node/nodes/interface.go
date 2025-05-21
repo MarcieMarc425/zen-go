@@ -2,7 +2,8 @@ package nodes
 
 import (
 	"errors"
-	"github.com/gorules/zen-go"
+
+	"github.com/marciemarc425/zen-go"
 )
 
 type NodeHandler interface {

@@ -3,9 +3,10 @@ package main
 import (
 	"embed"
 	"fmt"
-	"github.com/gorules/zen-go"
-	"github.com/gorules/zen-go/examples/custom-node/nodes"
 	"path"
+
+	"github.com/marciemarc425/zen-go"
+	"github.com/marciemarc425/zen-go/examples/custom-node/nodes"
 )
 
 //go:embed rules

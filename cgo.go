@@ -11,9 +11,9 @@ package zen
 import "C"
 
 import (
-	_ "github.com/gorules/zen-go/deps/darwin_amd64"
-	_ "github.com/gorules/zen-go/deps/darwin_arm64"
-	_ "github.com/gorules/zen-go/deps/linux_amd64"
-	_ "github.com/gorules/zen-go/deps/linux_arm64"
-	_ "github.com/gorules/zen-go/deps/windows_amd64"
+	_ "github.com/marciemarc425/zen-go/deps/darwin_amd64"
+	_ "github.com/marciemarc425/zen-go/deps/darwin_arm64"
+	_ "github.com/marciemarc425/zen-go/deps/linux_amd64"
+	_ "github.com/marciemarc425/zen-go/deps/linux_arm64"
+	_ "github.com/marciemarc425/zen-go/deps/windows_amd64"
 )

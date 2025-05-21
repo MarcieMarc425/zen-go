@@ -1,4 +1,4 @@
-module github.com/gorules/zen-go
+module github.com/marciemarc425/zen-go
 
 go 1.20
 

@@ -1,9 +1,10 @@
 package zen_test
 
 import (
-	"github.com/gorules/zen-go"
-	"github.com/stretchr/testify/require"
 	"testing"
+
+	"github.com/marciemarc425/zen-go"
+	"github.com/stretchr/testify/require"
 )
 
 func BenchmarkEngine(b *testing.B) {

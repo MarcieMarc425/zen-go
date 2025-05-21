@@ -2,7 +2,7 @@
 
 # Go Rules Engine
 
-ZEN Engine is a cross-platform, Open-Source Business Rules Engine (BRE). It is written in Rust and provides native 
+ZEN Engine is a cross-platform, Open-Source Business Rules Engine (BRE). It is written in Rust and provides native
 bindings for **NodeJS**, **Python** and **Go**. ZEN Engine allows to load and execute JSON Decision Model (JDM) from JSON files.
 
 <img width="800" alt="Open-Source Rules Engine" src="https://gorules.io/images/jdm-editor.gif">
@@ -12,7 +12,7 @@ An open-source React editor is available on our [JDM Editor](https://github.com/
 ## Installation
 
 ```bash
-go get github.com/gorules/zen-go
+go get github.com/marciemarc425/zen-go
 ```
 
 ## Usage
@@ -49,23 +49,22 @@ func main() {
 }
 
 ```
+
 For more details on rule format and advanced usage, take a look at the [Documentation](https://gorules.io/docs/developers/bre/engines/go).
 
 ### Supported Platforms
 
 List of platforms where Zen Engine is natively available:
 
-* **NodeJS** - [GitHub](https://github.com/gorules/zen/blob/master/bindings/nodejs/README.md) | [Documentation](https://gorules.io/docs/developers/bre/engines/nodejs) | [npmjs](https://www.npmjs.com/package/@gorules/zen-engine)
-* **Python** - [GitHub](https://github.com/gorules/zen/blob/master/bindings/python/README.md) | [Documentation](https://gorules.io/docs/developers/bre/engines/python) | [pypi](https://pypi.org/project/zen-engine/)
-* **Go** - [GitHub](https://github.com/gorules/zen-go) | [Documentation](https://gorules.io/docs/developers/bre/engines/go)
-* **Rust (Core)** - [GitHub](https://github.com/gorules/zen) | [Documentation](https://gorules.io/docs/developers/bre/engines/rust) | [crates.io](https://crates.io/crates/zen-engine)
+- **NodeJS** - [GitHub](https://github.com/gorules/zen/blob/master/bindings/nodejs/README.md) | [Documentation](https://gorules.io/docs/developers/bre/engines/nodejs) | [npmjs](https://www.npmjs.com/package/@gorules/zen-engine)
+- **Python** - [GitHub](https://github.com/gorules/zen/blob/master/bindings/python/README.md) | [Documentation](https://gorules.io/docs/developers/bre/engines/python) | [pypi](https://pypi.org/project/zen-engine/)
+- **Go** - [GitHub](https://github.com/marciemarc425/zen-go) | [Documentation](https://gorules.io/docs/developers/bre/engines/go)
+- **Rust (Core)** - [GitHub](https://github.com/gorules/zen) | [Documentation](https://gorules.io/docs/developers/bre/engines/rust) | [crates.io](https://crates.io/crates/zen-engine)
 
 For a complete **Business Rules Management Systems (BRMS)** solution:
 
-* [Self-hosted BRMS](https://gorules.io)
-* [GoRules Cloud BRMS](https://gorules.io/signin/verify-email)
-
-
+- [Self-hosted BRMS](https://gorules.io)
+- [GoRules Cloud BRMS](https://gorules.io/signin/verify-email)
 
 ## JSON Decision Model (JDM)
 
@@ -90,11 +89,11 @@ To see JDM Graph in action you can use [Free Online Editor](https://editor.gorul
 
 There are 5 main node types in addition to a graph Input Node (Request) and Output Node (Response):
 
-* Decision Table Node
-* Switch Node
-* Function Node
-* Expression Node
-* Decision Node
+- Decision Table Node
+- Switch Node
+- Function Node
+- Expression Node
+- Decision Node
 
 ### Decision Table Node
 
@@ -129,10 +128,10 @@ The hit policy determines the outcome calculation based on matching rules.
 
 The result of the evaluation is:
 
-* **an object** if the hit policy of the decision table is `first` and a rule matched. The structure is defined by the
+- **an object** if the hit policy of the decision table is `first` and a rule matched. The structure is defined by the
   output fields. Qualified field names with a dot (.) inside lead to nested objects.
-* **`null`/`undefined`** if no rule matched in `first` hit policy
-* **an array of objects** if the hit policy of the decision table is `collect` (one array item for each matching rule)
+- **`null`/`undefined`** if no rule matched in `first` hit policy
+- **an array of objects** if the hit policy of the decision table is `collect` (one array item for each matching rule)
   or empty array if no rules match
 
 #### Inputs
@@ -147,7 +146,7 @@ There are two types of evaluation of inputs, `Unary` and `Expression`.
 Unary evaluation is usually used when we would like to compare single fields from incoming context separately, for
 example `customer.country` and `cart.total` . It is activated when a column has `field` defined in its schema.
 
-***Example***
+**_Example_**
 
 For the input:
 
@@ -176,7 +175,7 @@ ELSE {"fees": {"flat": 150}}
 List shows basic example of the unary tests in the Input Fields:
 
 | Input entry | Input Expression                               |
-|-------------|------------------------------------------------|
+| ----------- | ---------------------------------------------- |
 | "A"         | the field equals "A"                           |
 | "A", "B"    | the field is either "A" or "B"                 |
 | 36          | the numeric value equals 36                    |
@@ -200,7 +199,7 @@ us to compare multiple fields from the incoming context inside same cell.
 
 It can be used by providing an empty `Selector (field)` inside column configuration.
 
-***Example***
+**_Example_**
 
 For the input:
 
@@ -234,7 +233,7 @@ structure of the information that will be returned. Each output column represent
 set of these fields forms the output or result associated with the validated row. This mechanism allows decision tables
 to precisely define and control the data output.
 
-***Example***
+**_Example_**
 
 <img width="860" alt="Decision Table Output" src="https://gorules.io/images/decision-table-output.png">
 
@@ -279,12 +278,12 @@ true, allowing branching to multiple paths.
 
 Note: If there are multiple edges from the same condition, there is no guaranteed order of execution.
 
-*Available from:*
+_Available from:_
 
-* Python 0.16.0
-* NodeJS 0.13.0
-* Rust 0.16.0
-* Go 0.1.0
+- Python 0.16.0
+- NodeJS 0.13.0
+- Rust 0.16.0
+- Go 0.1.0
 
 ### Functions Node
 
@@ -295,18 +294,18 @@ Engine that is bundled into the ZEN Engine.
 Function timeout is set to a 50ms.
 
 ```js
-const handler = (input, {dayjs, Big}) => {
-    return {
-        ...input,
-        someField: 'hello'
-    };
+const handler = (input, { dayjs, Big }) => {
+  return {
+    ...input,
+    someField: 'hello',
+  };
 };
 ```
 
 There are two built in libraries:
 
-* [dayjs](https://www.npmjs.com/package/dayjs) - for Date Manipulation
-* [big.js](https://www.npmjs.com/package/big.js) - for arbitrary-precision decimal arithmetic.
+- [dayjs](https://www.npmjs.com/package/dayjs) - for Date Manipulation
+- [big.js](https://www.npmjs.com/package/big.js) - for arbitrary-precision decimal arithmetic.
 
 ### Expression Node
 
@@ -332,7 +331,7 @@ maintainability in complex systems.
 ## Support matrix
 
 | Arch            | Rust               | NodeJS             | Python             | Go                 |
-|:----------------|:-------------------|:-------------------|:-------------------|:-------------------|
+| :-------------- | :----------------- | :----------------- | :----------------- | :----------------- |
 | linux-x64-gnu   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | linux-arm64-gnu | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | darwin-x64      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -351,4 +350,3 @@ tests.
 ## License
 
 [MIT License]()
-

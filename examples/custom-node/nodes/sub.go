@@ -1,6 +1,6 @@
 package nodes
 
-import "github.com/gorules/zen-go"
+import "github.com/marciemarc425/zen-go"
 
 type subNode struct {
 }
